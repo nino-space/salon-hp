@@ -180,8 +180,8 @@ export default function Home() {
                   <span className="text-[#A0866A] text-xs tracking-widest uppercase">Address</span>
                 </div>
                 <p className="text-sm text-[#6B5E52] leading-loose">
-                  〒980-0835<br />
-                  宮城県仙台市青葉区水の森1丁目12－2
+                  〒XXX-XXXX<br />
+                  〇〇県〇〇市△△町1-2-3
                 </p>
               </div>
 
