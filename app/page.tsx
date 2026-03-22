@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { Phone, MapPin, Clock, Mail, Instagram } from 'lucide-react'
+import { Phone, MapPin, Clock, Mail, Instagram, Scissors, Home as HomeIcon, Sparkles } from 'lucide-react'
+import { FaCut, FaHome, FaSpa } from 'react-icons/fa'
 
 export default function Home() {
   return (
@@ -32,15 +33,46 @@ export default function Home() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold kominka-text mb-8">コンセプト</h2>
+          
+          {/* イラストセクション */}
+          <div className="flex justify-center mb-12">
+            <div className="flex space-x-8">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-kominka-light rounded-full flex items-center justify-center mb-3">
+                  <FaHome className="w-10 h-10 kominka-accent" />
+                </div>
+                <p className="kominka-text text-sm">古民家</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-kominka-light rounded-full flex items-center justify-center mb-3">
+                  <FaCut className="w-10 h-10 kominka-accent" />
+                </div>
+                <p className="kominka-text text-sm">美容</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-kominka-light rounded-full flex items-center justify-center mb-3">
+                  <FaSpa className="w-10 h-10 kominka-accent" />
+                </div>
+                <p className="kominka-text text-sm">リラックス</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <h3 className="text-2xl font-semibold kominka-accent mb-4">古民家の温もり</h3>
+              <h3 className="text-2xl font-semibold kominka-accent mb-4 flex items-center">
+                <HomeIcon className="mr-2" />
+                古民家の温もり
+              </h3>
               <p className="kominka-text leading-relaxed mb-6">
                 100年以上前の古民家を改装した美容室。<br />
                 畳の上でくつろぎながら、ゆったりとした時間の中で<br />
                 最高のリラックス体験をお届けします。
               </p>
-              <h3 className="text-2xl font-semibold kominka-accent mb-4">靴を脱ぐ美容室</h3>
+              <h3 className="text-2xl font-semibold kominka-accent mb-4 flex items-center">
+                <Sparkles className="mr-2" />
+                靴を脱ぐ美容室
+              </h3>
               <p className="kominka-text leading-relaxed">
                 外の世界を忘れ、心からリラックスできる空間。<br />
                 靴を脱いで上がることで、日常から離れた特別な時間が始まります。
@@ -62,9 +94,31 @@ export default function Home() {
       <section className="py-20 px-4 bg-kominka-light/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold kominka-text text-center mb-12">メニュー</h2>
+          
+          {/* メニューアイコン */}
+          <div className="flex justify-center mb-12">
+            <div className="flex space-x-12">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-kominka-light rounded-full flex items-center justify-center mb-3">
+                  <Scissors className="w-8 h-8 kominka-accent" />
+                </div>
+                <p className="kominka-text">カット</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-kominka-light rounded-full flex items-center justify-center mb-3">
+                  <Sparkles className="w-8 h-8 kominka-accent" />
+                </div>
+                <p className="kominka-text">パーマ・カラー</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white/80 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold kominka-accent mb-6">カット</h3>
+              <h3 className="text-2xl font-semibold kominka-accent mb-6 flex items-center">
+                <Scissors className="mr-2" />
+                カット
+              </h3>
               <ul className="space-y-4 kominka-text">
                 <li className="flex justify-between">
                   <span>大人カット</span>
@@ -81,7 +135,10 @@ export default function Home() {
               </ul>
             </div>
             <div className="bg-white/80 p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold kominka-accent mb-6">パーマ・カラー</h3>
+              <h3 className="text-2xl font-semibold kominka-accent mb-6 flex items-center">
+                <Sparkles className="mr-2" />
+                パーマ・カラー
+              </h3>
               <ul className="space-y-4 kominka-text">
                 <li className="flex justify-between">
                   <span>パーマ</span>
@@ -112,8 +169,8 @@ export default function Home() {
                   <MapPin className="mr-2" />
                   住所
                 </h3>
-                <p className="kominka-text mb-4">〒XXX-XXXX</p>
-                <p className="kominka-text mb-6">〇〇県〇〇市△△町1-2-3</p>
+                <p className="kominka-text mb-4">〒980-0835</p>
+                <p className="kominka-text mb-6">宮城県仙台市青葉区水の森1丁目12－2</p>
                 
                 <h3 className="text-2xl font-semibold kominka-accent mb-6 flex items-center">
                   <Clock className="mr-2" />
@@ -126,11 +183,15 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
-                alt="地図"
-                fill
-                className="object-cover"
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.6657286!2d140.8499!3d38.2587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a1e5d5f5f5f5f%3A0x5f8a1e5d5f5f5f5f!2z5aSp5bGx5biC5bGx5Y2D5Yy65aSp5bGx5biC!5e0!3m2!1sja!2sjp!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                className="rounded-lg"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
@@ -142,17 +203,17 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold kominka-text mb-12">ご予約・お問い合わせ</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/80 p-8 rounded-lg shadow-lg">
+            <div className="bg-white/80 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Phone className="w-12 h-12 kominka-accent mx-auto mb-4" />
               <h3 className="text-xl font-semibold kominka-text mb-2">お電話</h3>
               <p className="kominka-accent text-2xl font-bold">XX-XXXX-XXXX</p>
             </div>
-            <div className="bg-white/80 p-8 rounded-lg shadow-lg">
+            <div className="bg-white/80 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Mail className="w-12 h-12 kominka-accent mx-auto mb-4" />
               <h3 className="text-xl font-semibold kominka-text mb-2">メール</h3>
               <p className="kominka-accent">info@kominka-salon.jp</p>
             </div>
-            <div className="bg-white/80 p-8 rounded-lg shadow-lg">
+            <div className="bg-white/80 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Instagram className="w-12 h-12 kominka-accent mx-auto mb-4" />
               <h3 className="text-xl font-semibold kominka-text mb-2">Instagram</h3>
               <p className="kominka-accent">@kominka_salon</p>
